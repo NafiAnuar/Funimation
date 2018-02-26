@@ -7,22 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Funimation
-{
-
-
-    public partial class SiteMaster
-    {
-
+namespace Funimation {
+    
+    
+    public partial class Site {
+        
         /// <summary>
-        /// HeadContent control.
+        /// Title control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
-
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Title;
+        
+        /// <summary>
+        /// Heading1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Heading1;
+        
+        /// <summary>
+        /// SideContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder SideContent;
+        
+        /// <summary>
+        /// Heading2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Heading2;
+        
         /// <summary>
         /// MainContent control.
         /// </summary>
