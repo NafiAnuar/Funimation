@@ -30,7 +30,7 @@ namespace Funimation
             }
             else
             {
-                litLoginError.Text = "Invalid username or password";
+                litLoginError.Text = "Invalid username or passwords";
             }
         }
 
