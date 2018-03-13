@@ -8,18 +8,9 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="Heading2" runat="server">
     Welcome to Funimation Homepage
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="SideContent" runat="server">
-    
-    <form id="form1" runat="server">
-        
 
-        
-        <asp:Login ID="Login1" runat="server" TitleText="Login Account" UserNameLabelText="UserName:">
-        </asp:Login>
-        
-
-        
-    <br /><br />
+<asp:Content ID="Content5" ContentPlaceHolderID="MainContent" runat="server">
+<form id="form1" runat="server">    
 Choose your genre type of DVD:
       
         <br />
@@ -37,15 +28,11 @@ Choose your genre type of DVD:
         </asp:DropDownList>
         <br />
         
-</form>
-    
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="MainContent" runat="server">
-    
 
+    
         <table>
             <tr>
-                <td><img alt="Black Clover" src="Images/DvdProduct/Black Clover.jpg" /><p>Black Clover</p><p>Price:$25</p><p>Available</p></td>
+                <td><a href="Product.aspx" title="Black Clover"><img alt="Black Clover" src="Images/DvdProduct/Black Clover.jpg" /><p>Black Clover</p><p>Price:$25</p><p>Available</p></a></td>
                 <td><img alt="Boku No Hero" src="Images/DvdProduct/Boku No hero.jpg" /><p>Boku No Hero</p><p>Price:$35</p><p>Available</p></td>
                 <td><img alt="Erased" src="Images/DvdProduct/Erased.jpg" /><p>Erased</p><p>Price:$20</p><p>Available</p></td>
             </tr>
@@ -61,6 +48,6 @@ Choose your genre type of DVD:
             </tr>
         </table>
 
-  
+</form>  
 </asp:Content>
 

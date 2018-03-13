@@ -31,13 +31,31 @@ namespace Funimation {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Heading1;
         
         /// <summary>
-        /// SideContent control.
+        /// LnkRegister control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder SideContent;
+        protected global::System.Web.UI.WebControls.HyperLink LnkRegister;
+        
+        /// <summary>
+        /// LitStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink LitStatus;
+        
+        /// <summary>
+        /// LnkLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink LnkLogin;
         
         /// <summary>
         /// Heading2 control.
@@ -56,5 +74,14 @@ namespace Funimation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        
+        /// <summary>
+        /// GoogleMap control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder GoogleMap;
     }
 }

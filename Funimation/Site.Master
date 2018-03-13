@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Funimation.Site" %>
+﻿
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Funimation.Site" %>
 
 <!DOCTYPE html>
 
@@ -6,8 +7,22 @@
 <head runat="server">
     <title><asp:ContentPlaceHolder ID="Title" runat="server"></asp:ContentPlaceHolder></title>
     <link rel="stylesheet" type="text/css" href="css/StyleSheet.css" />
-    
-
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  
 </head>
 
 <body runat="server">
@@ -24,17 +39,21 @@
         <li><a href="Default.aspx">Home</a></li>
         <li><a href="Product.aspx">Product</a></li>
         <li><a href="Contact.aspx">Contact Us</a></li>
-        
+        <li style="float:right">
+            <asp:HyperLink ID="LnkRegister" NavigateUrl="Register.aspx" runat="server">Register</asp:HyperLink>
+            <asp:HyperLink ID="LitStatus" runat="server"></asp:HyperLink>      
+        </li>
+
+        <li style="float:right">
+            <asp:HyperLink ID="LnkLogin" NavigateUrl="Login.aspx" runat="server">Log in</asp:HyperLink>
+            
+        </li>
        </ul>
         </div>
     </div>
 
 
-
- <div id="sidebar">
-     <asp:ContentPlaceHolder ID ="SideContent" runat ="server"></asp:ContentPlaceHolder>
-
- </div>
+ 
  <div id="content_area">
     <h2><asp:ContentPlaceHolder ID ="Heading2" runat ="server"></asp:ContentPlaceHolder></h2>
 
@@ -44,8 +63,10 @@
  <div id="footer">
    <p>&copy;Mohammad Hanafi Student No:1626737 Assesment No:339967 Student ID No:LCB/3330</p>
  </div>
-
-
+  
 </div>
+    <asp:ContentPlaceHolder ID="GoogleMap" runat="server">
+     
+    </asp:ContentPlaceHolder>
 </body>
 </html>
