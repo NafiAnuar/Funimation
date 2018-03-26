@@ -19,9 +19,13 @@ namespace Funimation
         protected void btnReg_Click(object sender, EventArgs e)
         {
             var identityObContext = new IdentityDbContext("IdentityConnectionString");
+            var roleStore = new RoleStore<IdentityRole>(identityObContext);
+            var roleManager = new RoleManager<IdentityRole>(roleStore);
             var userStore = new UserStore<IdentityUser>(identityObContext);
             var manager = new UserManager<IdentityUser>(userStore);
 
+            IdentityRole adminRole = new IdentityRole("Admin");
+            roleManager.Create(adminRole);
             var user = new IdentityUser()
             {
                 UserName = txtRegEmail.Text,
@@ -31,7 +35,10 @@ namespace Funimation
             IdentityResult result = manager.Create(user, txtRegPassword.Text);
             if (result.Succeeded)
             {
-                //todo: log them in
+                manager.AddToRole(user.Id, "Admin");
+                manager.Update(user);
+
+                litRegisterError.Text = "Registration Successful"; 
             }
             else
             {
