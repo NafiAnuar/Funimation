@@ -18,5 +18,26 @@ namespace Funimation.admin
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
+        {
+            
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            FileUpload fle = (FileUpload)FormView1.FindControl("FIleUpload1") as FileUpload;
+            if (fle.HasFile)
+            {
+                fle.SaveAs(Server.MapPath("~/ProductImages/" + fle.FileName + ".jpg"));
+                Label li = (Label)FormView1.FindControl("Label1") as Label;
+                li.Text = "~/ProductImages/" + fle.FileName + ".jpg";
+            }
+        }
     }
 }

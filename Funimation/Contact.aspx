@@ -17,9 +17,8 @@
     <p>wwww.Facebook/Funimation.com</p>
     <p>wwww.Twitter/Funimation.com</p>
     <p>www.Youtube/Funimation.com</p>
-    <h2>Our Location</h2>
-    <p>Google Map</p>
     
+    <h2>Send us a Message</h2>
 
         
        <asp:Label ID="Email" runat="server" Text="Email"></asp:Label>
@@ -42,6 +41,8 @@
         <asp:Button ID="btnSubmit" runat="server" OnClick="Button1_Click" Text="Submit" />
     
         <asp:Literal ID="litResult" runat="server"></asp:Literal>
+        <h2>Our Location</h2>
+    <p>Google Map</p>
     
 </form>
 
@@ -52,8 +53,12 @@
              var map;
              function initMap() {
                  map = new google.maps.Map(document.getElementById('map'), {
-                     center: { lat: -34.397, lng: 150.644 },
-                     zoom: 8
+                     center: { lat: 4.885731, lng: 114.931669 },
+                     zoom: 20
+                 });
+                 var marker = new google.maps.Marker({
+                     position: { lat: 4.885731, lng: 114.931669 },
+                     map: map
                  })
                 }
         </script>

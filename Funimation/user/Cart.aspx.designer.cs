@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Funimation.admin {
+namespace Funimation {
     
     
-    public partial class addproduct {
+    public partial class Cart1 {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,12 @@ namespace Funimation.admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// FormView1 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

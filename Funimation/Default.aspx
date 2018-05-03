@@ -10,44 +10,41 @@
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="MainContent" runat="server">
-<form id="form1" runat="server">    
-Choose your genre type of DVD:
-      
-        <br />
-        <asp:DropDownList ID="DropDownList1" runat="server">
-            <asp:ListItem>All type</asp:ListItem>
-            <asp:ListItem>Romance</asp:ListItem>
-            <asp:ListItem>Comedy</asp:ListItem>
-            <asp:ListItem>Horror</asp:ListItem>
-            <asp:ListItem>Mecha</asp:ListItem>
-            <asp:ListItem>Fantasy</asp:ListItem>
-            <asp:ListItem>Game</asp:ListItem>
-            <asp:ListItem>School</asp:ListItem>
-            <asp:ListItem>Sci-fi</asp:ListItem>
-            <asp:ListItem>Mystery</asp:ListItem>
-        </asp:DropDownList>
-        <br />
+    <form id="form1" runat="server"> 
+
+        <p>List Of Product</p>
+    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" >
+        <HeaderTemplate>
+            
+                    
+        </HeaderTemplate>
         
+        <ItemTemplate > 
+            
+            <table id="tblarrange">
+            <tr>     
+          <td>  
+             <a href="<%# Eval("Id","Product.aspx?Id={0}") %>">
+                <asp:Image ID="imgproduct" runat="server" ImageUrl='<%#Eval ("Image") %>' /><p></p>
+                <%# Eval("Name") %><p>Price:$<%#Eval("Price") %></p>
+             </a> 
+          </td>
+            </tr>
+            </table>
 
+            
+        </ItemTemplate>
+
+        <FooterTemplate>
+        
+        </FooterTemplate>
+    </asp:Repeater>
     
-        <table>
-            <tr>
-                <td><a href="Product.aspx" title="Black Clover"><img alt="Black Clover" src="Images/DvdProduct/Black Clover.jpg" /><p>Black Clover</p><p>Price:$25</p><p>Available</p></a></td>
-                <td><img alt="Boku No Hero" src="Images/DvdProduct/Boku No hero.jpg" /><p>Boku No Hero</p><p>Price:$35</p><p>Available</p></td>
-                <td><img alt="Erased" src="Images/DvdProduct/Erased.jpg" /><p>Erased</p><p>Price:$20</p><p>Available</p></td>
-            </tr>
-            <tr>
-                <td><img alt="Gundam Iron Blooded Orphans" src="Images/DvdProduct/Gundam Iron Blooded Orphans.jpg" /><p>Gundam Iron Blooded Orphans</p><p>Price:$35</p><p>Available</p></td>
-                <td><img alt="Kokoro Connect" src="Images/DvdProduct/Kokoro Connect.jpg" /><p>Kokoro Connect</p><p>Price:$22</p><p>Available</p></td>
-                <td><img alt="Kekkai Sensen" src="Images/DvdProduct/Kekkai Sensen.jpg" /><p>Kekkai Sensen</p><p>Price:$28</p><p>Available</p></td>
-            </tr>
-            <tr>
-                <td><img alt="One Punch Man" src="Images/DvdProduct/One punch man.jpg" /><p>One Punch Man</p><p>Price:$35</p><p>Available</p></td>
-                <td><img alt="Overlord" src="Images/DvdProduct/Overlord.jpg" /><p>Overlord</p><p>Price:$25</p><p>Available</p></td>
-                <td><img alt="Tokyo Ghoul" src="Images/DvdProduct/Tokyo Ghoul.jpg" /><p>Tokyo Ghoul</p><p>Price:$30</p><p>Available</p></td>
-            </tr>
-        </table>
-
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_1626737_co5027_asgConnectionString %>" SelectCommand="SELECT * FROM [TableProduct] WHERE ([Quantity] &gt; @Quantity)" OldValuesParameterFormatString="original_{0}">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="0" Name="Quantity" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 </form>  
 </asp:Content>
 

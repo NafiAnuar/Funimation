@@ -16,15 +16,18 @@ namespace Funimation
 
         }
 
-        protected void btnReg_Click(object sender, EventArgs e)
+        
+
+        protected void btnReg_Click1(object sender, EventArgs e)
         {
+
             var identityObContext = new IdentityDbContext("IdentityConnectionString");
             var roleStore = new RoleStore<IdentityRole>(identityObContext);
             var roleManager = new RoleManager<IdentityRole>(roleStore);
             var userStore = new UserStore<IdentityUser>(identityObContext);
             var manager = new UserManager<IdentityUser>(userStore);
 
-            IdentityRole adminRole = new IdentityRole("Admin");
+            IdentityRole adminRole = new IdentityRole("RegisteredUser");
             roleManager.Create(adminRole);
             var user = new IdentityUser()
             {
@@ -35,14 +38,14 @@ namespace Funimation
             IdentityResult result = manager.Create(user, txtRegPassword.Text);
             if (result.Succeeded)
             {
-                manager.AddToRole(user.Id, "Admin");
+                manager.AddToRole(user.Id, "RegisteredUser");
                 manager.Update(user);
 
                 litRegisterError.Text = "Registration Successful"; 
             }
             else
             {
-                litRegisterError.Text = "An error has occured" + result.Errors.FirstOrDefault();
+                litRegisterError.Text = "An error has occured " + result.Errors.FirstOrDefault();
             }
 
         }

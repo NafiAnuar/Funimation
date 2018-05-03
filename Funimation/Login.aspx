@@ -14,9 +14,10 @@
         <br />
         <br />
         <asp:Label ID="Label2" runat="server" Text="password"></asp:Label>
-        <asp:TextBox ID="txtLoginPassword" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtLoginPassword" runat="server" TextMode="Password"></asp:TextBox>
         <br />
-        <asp:Button ID="btnLogin" runat="server" Text="Login" />
+        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click1" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Haven't Register?" />
         <br />
         <asp:Literal ID="litLoginError" runat="server"></asp:Literal>
     </form>

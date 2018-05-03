@@ -22,8 +22,9 @@ namespace Funimation
             // Sends email using a mail server that requires login credentials and a secure connection, e.g. gmail
 
             //create mail client and message with to and from address, and set message subject and body
+
             SmtpClient smtpClient = new SmtpClient();
-            MailMessage msg = new MailMessage("Nafianuar25@gmail.com", "Nafianuar25@gmail.com");
+            MailMessage msg = new MailMessage("nafianuar22@gmail.com", "nafianuar22@gmail.com");
             msg.Subject = txtSubject.Text;
             msg.Body = txtBody.Text;
 
@@ -33,8 +34,9 @@ namespace Funimation
             smtpClient.EnableSsl = true;
 
             //create credentials - e.g. username and password for the account
-            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("Nafianuar25@gmail.com", "Han2011fi");
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("nafianuar22@gmail.com", "Han2011fi");
             smtpClient.Credentials = credentials;
+           // msg = new MailMessage("Nafianuar25@gmail.com", "Nafianuar25@gmail.com");
 
             try
             {

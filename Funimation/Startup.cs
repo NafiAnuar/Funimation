@@ -17,7 +17,7 @@ namespace Funimation
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Login.aspx14tt")
+                LoginPath = new PathString("/Login.aspx")
             });
         }
     }

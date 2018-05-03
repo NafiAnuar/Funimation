@@ -18,7 +18,8 @@ namespace Funimation
 
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+
+        protected void btnLogin_Click1(object sender, EventArgs e)
         {
             var identityObContext = new IdentityDbContext("IdentityConnectionString");
             var userStore = new UserStore<IdentityUser>(identityObContext);
@@ -40,6 +41,30 @@ namespace Funimation
             var userIdentity = usermanager.CreateIdentity(
                 user, DefaultAuthenticationTypes.ApplicationCookie);
             authenticationManager.SignIn(new AuthenticationProperties() { }, userIdentity);
+
+            if (Request.QueryString["ReturnUrl"] !=null)
+            {
+                Response.Redirect(Request.QueryString["ReturnUrl"]);
+            }
+            else
+            {
+                String userRoles = usermanager.GetRoles(user.Id).FirstOrDefault();
+
+                if (userRoles.Equals("Admin"))
+                {
+                    Response.Redirect("~/admin/index.aspx");
+                }
+                else if (userRoles.Equals("RegisteredUser"))
+                {
+                    Response.Redirect("~/user/Cart.aspx");
+                }
+            }
+        }
+
+      
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
         }
     }
 }

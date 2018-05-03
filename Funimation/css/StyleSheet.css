@@ -47,7 +47,7 @@ body {
         margin-top: 15px;
         display: block;
         text-transform: uppercase;
-        padding: 0px 20px 0px 20px;
+        padding: 0 20px 0 20px;
         border-left: 1px solid #ffffff;
     }
 
@@ -70,21 +70,35 @@ body {
     
 }
 
-
-
-#content_area table {
-    width: 100%;
- 
+#tblarrange 
+{
+    border-collapse: collapse;
+    width: 25%;
+    margin: 10px;
+    float: left;
 }
 
+#tblarrange th
+{
+    padding:8px 10px;
+    text-align: left;
+}
+
+#tblarrange td {
+    padding: 3px 10px;
+}
 
 #footer {
     clear: both;
     width: auto;
-    height: 40px;
-    padding:5px;
+    height:70px;
+    padding: 5px;
     background-color: #000099;
     text-shadow: 0.03cm 0.03cm #333;
     color: #fff;
     text-align: center;
 }
+
+    #footer  a:link, #footer a:active, #footer a:visited {
+        color: #fff;
+    }
